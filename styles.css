@@ -3,3 +3,53 @@ body {
   background-color: #f0f0f0;
   text-align: center;
 }
+
+.feature-card-container {
+ display: flex;       /* Aligns children horizontally */
+  flex-wrap: wrap;     /* Allows column breaking on small screens */
+  gap: 16px;  
+
+}
+
+.feature-card{
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+     flex: 1;             /* Distributes width evenly among columns */
+  min-width: 250px;    /* Triggers a line break/wrap if the screen gets too small */
+}
+
+
+label {
+  display: block;
+  cursor: pointer;
+  margin: 8px auto;s
+}
+
+input[type='checkbox'] {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #f1be32;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+input[type='checkbox']:checked {
+  background-color: orange;
+  border-color: lime;
+}
+
+input[type='checkbox']:checked::after {
+  content: "✓";
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  line-height: 25px;
+}
