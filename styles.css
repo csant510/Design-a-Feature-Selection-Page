@@ -1,38 +1,54 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 100vh;
-  background-color: #f0f0f0;
-  text-align: center;
 }
 
 .feature-card-container {
- display: flex;       /* Aligns children horizontally */
-  flex-wrap: wrap;     /* Allows column breaking on small screens */
-  gap: 16px;  
-   
-
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 600px;
+  justify-content: center;
 }
 
-.feature-card{
-    background-color: #ffffff;
-    border-radius: 8px;
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin:auto;
-    width: 100%;
-    flex: 1;             /* Distributes width evenly among columns */
-    min-width: 250px;    /* Triggers a line break/wrap if the screen gets too small */
+.feature-card-container > * {
+  flex: 1 1 180px; /* a shorthand property that combines three layout instructions for a flex item into a single line: flex-grow: 1, flex-shrink: 1, and flex-basis: 180px
+                      while using a hierarchical selector syntax composed of the child combinator (>) and the universal selector (*)*/
+                  
 }
 
-
-
-
-label {
-  display: block;
+.feature-card {
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
   cursor: pointer;
-
 }
 
-input[type='checkbox'] {
+.feature-card:hover {
+  border-color: #f1be32;
+  box-shadow: 0 4px 12px rgba(255, 201, 53, 0.6);
+}
+
+.feature-card input[type='checkbox'] {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.feature-card input[type='checkbox'] {
   width: 25px;
   height: 25px;
   cursor: pointer;
@@ -43,12 +59,12 @@ input[type='checkbox'] {
   margin-right: 15px;
 }
 
-input[type='checkbox']:checked {
+.feature-card input[type='checkbox']:checked {
   background-color: orange;
   border-color: lime;
 }
 
-input[type='checkbox']:checked::after {
+.feature-card input[type='checkbox']:checked::after {
   content: "✓";
   display: block;
   text-align: center;
